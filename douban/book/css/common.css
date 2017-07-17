@@ -1,0 +1,75 @@
+/*--------------------------------------------------reset--------------------------------------------------*/
+body,h1,h2,h3,h4,h5,h6,dl,dd,p{
+	margin:0;
+	font:14px "微软雅黑";
+}
+
+html{
+	height: 100%;
+}
+
+body{
+	height: 100%;
+}
+
+ul,ol{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+a{
+	text-decoration:none;
+	color: inherit;
+	display:inline-block;
+}
+
+h1,h2,h3,h4,h5,h6,strong,b{
+	font-weight:100;
+}
+
+em,i{
+	font-style:normal;
+}
+
+img{
+	vertical-align:top;
+	border:none;
+}
+
+input,textarea,select,option,fieldset{
+	margin:0;
+	padding:0;
+	border:0;
+	background:none;
+	vertical-align:top;
+	outline: none;
+}
+
+
+/*--------------------------------------------------public--------------------------------------------------*/
+.clearfix:after{
+	content:"";
+	display:block;
+	clear:both;
+	height:0;
+	overflow:hidden;
+}
+
+.clearfix{
+	zoom:1;
+}
+
+.fl{
+	float:left;
+}
+
+.fr{
+	float:right;
+}
+
+.wrap{
+	margin: 0 auto;
+}
+
+/*--------------------------------------------------global-------------------------------------------------*/

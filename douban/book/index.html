@@ -86,5 +86,69 @@
   </div>
   <!-- 导航栏 end-->
 
+  <!-- 搜索&导航 start-->
+  <div id="db-nav-book" class="nav">
+
+    <!-- 搜索栏 satrt-->
+    <div class="nav-wrap">
+      <div class="nav-primary">
+        <div class="nav-logo">
+          <a href="http://bowie-chan.com/douban/book/">豆瓣读书</a>
+        </div>
+        <div class="nav-search">
+          <form action="https://book.douban.com/subject_search" method="get">
+            <fieldset>
+              <legend>搜索：</legend>
+              <label for="inp-query"></label>
+              <div class="inp">
+                <input id="inp-query" name="search_text" size="22" maxlength="60" placeholder="书名、作者、ISBN" value="">
+              </div>
+              <div class="inp-btn">
+                <input type="submit" value="搜索">
+              </div>
+              <input type="hidden" name="cat" value="1001" />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- 搜索栏 end-->
+
+    <!-- 二级导航 start-->
+    <div class="nav-secondary">
+      <div class="nav-items">
+        <ul>
+          <li    ><a href="https://book.douban.com/cart/"
+           >购书单</a>
+          </li>
+          <li    ><a href="https://read.douban.com/ebooks/?dcs=book-nav&dcm=douban"
+                  target="_blank"
+           >电子图书</a>
+          </li>
+          <li    ><a href="https://market.douban.com/book?utm_campaign=book_nav_freyr&utm_source=douban&utm_medium=pc_web"
+           >纸书</a>
+          </li>
+          <li    ><a href="https://book.douban.com/annual2016/?source=navigation"
+                  target="_blank"
+           >2016年度榜单</a>
+          </li>
+          <li    ><a href="https://book.douban.com/standbyme/2016?source=navigation"
+                  target="_blank"
+           >2016读书报告</a>
+          </li>
+          <li          class=" book-cart"
+          ><a href="https://market.douban.com/cart/?utm_campaign=book_nav_cart&utm_source=douban&utm_medium=pc_web"
+                  target="_blank"
+           >购物车</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- 二级导航 end-->
+
+  </div>
+  <!-- 搜索&导航 end-->
+
+
 </body>
 </html>

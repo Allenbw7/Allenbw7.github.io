@@ -1,4 +1,4 @@
-
+/*-----------------------------一级导航---------------------------------*/
 #db-global-nav {
   font: 12px Helvetica,Arial,sans-serif;
   height: 28px;
@@ -34,6 +34,12 @@
     zoom: 1;
     padding: 0 8px;
     height: 28px;
+}
+
+#db-global-nav .more-items {
+    display: none;
+    position: absolute;
+    left: 0;
 }
 
 #db-global-nav .more-active .more-items {
@@ -127,4 +133,202 @@
     //display: none;
     position: absolute;
     left: 0;
+}
+
+/*----------------------------------搜索栏-----------------------------------*/
+
+#db-nav-book {
+    background: #f6f6f1;
+}
+
+.nav {
+    width: 100%;
+    min-width: 950px;
+    overflow: hidden;
+    zoom: 1;
+    margin-bottom: 40px;
+}
+
+#db-nav-book .nav-wrap {
+    border-color: #e9e9e2;
+}
+
+.nav .nav-wrap {
+    border-bottom: 1px solid #e5ebe4;
+}
+
+.nav .nav-primary {
+    width: 950px;
+    margin: 0 auto;
+    overflow: visible !important;
+    position: relative;
+    padding: 10px 0 5px;
+    zoom: 1;
+}
+
+#db-nav-book .nav-logo {
+    background: url(http://img3.doubanio.com/dae/accounts/resources/1f8cb0a/book/assets/lg_book_a11_1.png?s=1) no-repeat 0 12px;
+    background-image: -webkit-image-set(url(http://img3.doubanio.com/dae/accounts/resources/1f8cb0a/book/assets/lg_book_a11_1.png?s=1) 1x, url(//img3.doubanio.com/dae/accounts/resources/1f8cb0a/book/assets/lg_book@2x.png?s=1) 2x);
+    background-image: -moz-image-set(url(http://img3.doubanio.com/dae/accounts/resources/1f8cb0a/book/assets/lg_book_a11_1.png?s=1) 1x, url(//img3.doubanio.com/dae/accounts/resources/1f8cb0a/book/assets/lg_book@2x.png?s=1) 2x);
+    background-image: -ms-image-set(url(http://img3.doubanio.com/dae/accounts/resources/1f8cb0a/book/assets/lg_book_a11_1.png?s=1) 1x, url(//img3.doubanio.com/dae/accounts/resources/1f8cb0a/book/assets/lg_book@2x.png?s=1) 2x);
+    background-image: -o-image-set(url(http://img3.doubanio.com/dae/accounts/resources/1f8cb0a/book/assets/lg_book_a11_1.png?s=1) 1x, url(//img3.doubanio.com/dae/accounts/resources/1f8cb0a/book/assets/lg_book@2x.png?s=1) 2x);
+}
+
+.nav .nav-logo {
+    float: left;
+    height: 56px;
+    width: 145px;
+    margin: 0 13px 0 0;
+}
+
+#db-nav-book a:link, #db-nav-book a:visited {
+    color: #614e3c;
+    text-decoration: none;
+}
+
+.nav .nav-logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    line-height: 100em;
+}
+
+.nav-search {
+    margin-left: 145px;
+    overflow: visible !important;
+    position: relative;
+    zoom: 1;
+    padding: 10px 0 15px 0;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+}
+
+.nav-search fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    position: static;
+}
+
+fieldset legend {
+    color: #666;
+    padding: 0 5px;
+}
+
+.nav-search legend {
+    display: none;
+}
+
+label {
+    font-family: Tahoma;
+    vertical-align: middle;
+}
+
+.nav-search label {
+    position: absolute;
+    left: 11px;
+    top: 10px;
+    line-height: 30px;
+    cursor: text;
+    color: #bbb;
+    width: auto;
+}
+
+.nav-search .inp {
+    float: left;
+    width: 470px;
+    height: 34px;
+    text-align: center;
+    margin-right: -3px;
+    cursor: text;
+}
+
+.nav-search .inp {
+    background-image: url(http://img3.doubanio.com/dae/accounts/resources/1f8cb0a/book/assets/nav_bk_bg.png?s=1);
+}
+
+.nav-search .inp input {
+    background: #fff;
+    width: 96%;
+    margin: 0;
+    text-align: left;
+    height: 30px;
+    padding-left: 10px;
+    height: 28px\9;
+    line-height: 28px\9;
+    outline: none;
+}
+
+.nav-search input {
+    -webkit-appearance: none;
+    border: none;
+    background: transparent;
+}
+
+.nav-search .inp-btn {
+    position: relative;
+    left: -1px;
+    width: 37px;
+    height: 34px;
+    zoom: 1;
+    overflow: hidden;
+}
+
+.nav-search .inp-btn input {
+    background: url(http://img3.doubanio.com/dae/accounts/resources/1f8cb0a/book/assets/nav_bk_bg.png?s=1) no-repeat 0 -40px;
+}
+
+.nav-search .inp-btn input {
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    padding: 35px 0 0 0;
+    overflow: hidden;
+    color: transparent;
+    cursor: pointer;
+}
+/*----------------------------------二级导航----------------------------------*/
+.nav-secondary {
+    width: 950px;
+    margin: 0 auto;
+    padding-bottom: 0;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.nav-secondary .nav-items {
+    float: none;
+    zoom: 1;
+    font-size: 13px;
+}
+
+.nav-secondary ul {
+    margin: 9px 0;
+}
+
+.nav-secondary li {
+    display: inline;
+    margin-right: 25px;
+}
+
+#db-nav-book a:link, #db-nav-book a:visited {
+    color: #614e3c;
+    text-decoration: none;
+}
+
+.nav-secondary .book-cart {
+    position: relative;
+    padding-left: 18px;
+    padding-top: 2px;
+    _padding-top: 0;
+    background-image: url(http://img3.doubanio.com/dae/accounts/resources/1f8cb0a/book/assets/icon_myorders.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    _background-position: left 2px;
+    background-size: 15px;
 }

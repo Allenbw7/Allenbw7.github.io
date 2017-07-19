@@ -337,13 +337,23 @@ label {
 /*------------------------------主要内容-------------------------------------*/
 #bookList{
   width: 950px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
 }
 #bookList .bookInfo{
   width:120px;
   float: left;
   margin: 0 15px 20px 0;
   height: 220px;
+  overflow: hidden;
+}
+
+.cover a:hover {
+  animation: mvr 1s linear 0s infinite alternate;
+}
+
+@keyframes mvr{
+  0% {opacity: 50%}
+  100% {transform: scale(1.05,1.05)}
 }
 
 .bookInfo dt {
@@ -375,4 +385,82 @@ label {
 
 .bookInfo .rating {
   color: #fa604a;
+}
+
+/*------------------------------首页页码-------------------------------------*/
+.paginator{
+  width: 950px;
+  height: 50px;
+  margin: 0 auto 20px;
+  font: 14px Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.paginator #page {
+  display: inline-block;
+}
+
+.paginator .prev {
+  margin-right: 20px;
+  color: #aaa;
+}
+
+.paginator .next {
+  color: #aaa;
+}
+
+.paginator a, .thispage, .break {
+  color: #3377aa;
+  padding: 0px 4px;
+  margin: 4px;
+}
+
+.paginator a:hover {
+  color: #fff;
+  background: #3377aa;
+}
+
+.paginator .thispage {
+  color: #fff;
+  background: #83BF73;
+}
+
+.paginator .break {
+    color: #999;
+}
+
+
+/*------------------------------footer-------------------------------------*/
+#footer {
+  padding-bottom: 10px;
+  width: 950px;
+  margin: 0 auto;
+}
+
+#footer {
+    color: #999;
+    padding: 6px 0;
+    margin-top: 40px;
+    overflow: hidden;
+    zoom: 1;
+    border-top: 1px dashed #ddd;
+}
+
+.fleft {
+    float: left;
+    font-size: 12px;
+}
+
+.fright {
+    float: right;
+}
+
+.fright a {
+  font-size: 12px;
+  color: #3377aa;
+}
+
+.fright a:hover {
+  color: #fff;
+  background-color: #3377aa;
 }

@@ -5,7 +5,7 @@ function Modle(val,num){
     data:{
       q:val,
       start:num,
-      count:100
+      count:50
     },
     success:function(data){
     	console.log(data)

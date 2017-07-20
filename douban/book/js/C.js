@@ -82,6 +82,7 @@ for(let i=0; i<3; i++) {
 //搜索结果排序2，0默认排序，1出版时间排序，2评分排序
 function bookS(i) {
   val = val || 'javascript';
+  console.log(val)
   switch (i) {
     case 0:
       Modle1(val,num,n);

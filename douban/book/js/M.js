@@ -1,40 +1,26 @@
-function Modle(val,num){
+//向豆瓣接口请求搜索内容的具体数据
+function Modle(val,num,n){
   $.ajax({
  		url:'https://api.douban.com/v2/book/search?callback=?',
     dataType:'jsonp',
     data:{
       q:val,
       start:num,
-      count:50
+      count:49,
     },
     success:function(data){
-    	//console.log(data)
-      data.len = Math.ceil(data.total/data.count);
+    	console.log(data,n)
+      data.len = Math.ceil(data.total/49);
       $('#bookList').html(View(data));
-      $('#page').html(Page(data));
+      $('#page').html(Page(data,n));
       scrollTo(0,0);
+      pn(n,data.len-1);
     }
   });
 }
 
-function Modle2(val,num){
-  $.ajax({
- 		url:'https://api.douban.com/v2/book/search?callback=?',
-    dataType:'jsonp',
-    data:{
-      q:val,
-      start:num,
-      count:50
-    },
-    success:function(data){
-      data.len = Math.ceil(data.total/data.count);
-      $('#bookList').html(View(data));
-      scrollTo(0,0);
-      pn(num/50,data.len);
-    }
-  });
-}
 
+//当选中第一页和最后一页时，对应上一页或下一页不可点击状态
 function pn(n,len) {
   console.log(n,len)
   if(n == 0) {

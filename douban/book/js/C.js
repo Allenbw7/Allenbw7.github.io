@@ -19,6 +19,7 @@ $btn.click(function() {
   val = $txt.val();
   Modle(val,num,n);//搜索后首次数据展示
   ModleAll(val,num,n);//拉取搜索匹配条目到本地
+  $('.bookSort a').eq(0).addClass('deSort').parent().siblings().children().removeClass('deSort');
   return false;
 })
 

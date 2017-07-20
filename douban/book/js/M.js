@@ -32,7 +32,7 @@ function ModleAll(val,num,n){
         bookAll2.books.sort(function(a,b) {
           return b.rating.average - a.rating.average;
         });
-        console.log(bookAll,bookAll1,bookAll2);
+        //console.log(bookAll,bookAll1,bookAll2);
       }
     }
   });
@@ -63,7 +63,7 @@ function Modle(val,num,n){
       count:49,
     },
     success:function(data){
-    	console.log(data)
+    	//console.log(data)
       data.len = Math.ceil(data.total/49);
       $('.trr').html(`<h5 class="trr">搜索结果${data.start+1}-${data.start+49},共${data.total}</h5>`);
       $('#bookList').html(View(data,num));
@@ -130,50 +130,34 @@ function Modle(val,num,n){
 
 //按默认排序，缓存数据
 function Modle1(val,num,n){
-
-      // bookAll.books.sort(function(a,b) {
-      //   return getDate(b.pubdate) - getDate(a.pubdate);
-      // })
       bookAll.len = Math.ceil(bookAll.books.length/49);
       $('.trr').html(`<h5 class="trr">搜索结果${num+1}-${num+49},共${bookAll.books.length}</h5>`);
       $('#bookList').html(View(bookAll,num));
       $('#page').html(Page(bookAll,n));
       scrollTo(0,0);
       pn(n,bookAll.len-1);
-
 }
 
 
 //按时间排序，缓存数据
 function Modle2(val,num,n){
-
-      // bookAll.books.sort(function(a,b) {
-      //   return getDate(b.pubdate) - getDate(a.pubdate);
-      // })
       bookAll1.len = Math.ceil(bookAll1.books.length/49);
       $('.trr').html(`<h5 class="trr">搜索结果${num+1}-${num+49},共${bookAll1.books.length}</h5>`);
       $('#bookList').html(View(bookAll1,num));
       $('#page').html(Page(bookAll1,n));
       scrollTo(0,0);
       pn(n,bookAll1.len-1);
-
 }
 
 
 //按评分排序，缓存数据
 function Modle3(val,num,n){
-
-    	//console.log(data)
-      // bookAll.books.sort(function(a,b) {
-      //   return b.rating.average - a.rating.average;
-      // })
       bookAll2.len = Math.ceil(bookAll2.books.length/49);
       $('.trr').html(`<h5 class="trr">搜索结果${num+1}-${num+49},共${bookAll2.books.length}</h5>`);
       $('#bookList').html(View(bookAll2,num));
       $('#page').html(Page(bookAll2,n));
       scrollTo(0,0);
       pn(n,bookAll2.len-1);
-
 }
 
 
@@ -183,9 +167,11 @@ function pn(n,len) {
   if(n == 0) {
     $('.prev').html('上一页');
     $('.prev').attr('onOff',false);
+    $('.next').html('<a href="javascript:;">下一页>></a>');
   }else if(n == len) {
     $('.next').html('下一页');
     $('.next').attr('onOff',false);
+    $('.prev').html('<a href="javascript:;"><<上一页</a>');
   }else {
     $('.prev').html('<a href="javascript:;"><<上一页</a>');
     $('.next').html('<a href="javascript:;">下一页>></a>');
@@ -195,22 +181,29 @@ function pn(n,len) {
 //转换时间格式
 function getDate(data) {
   let time = data.split('-');
-  if(time.length == 0) {
-    time = '00';
-  }else if(time.length == 1) {
-    time = time[0];
-  }else if(time.length == 2) {
-    if(time[1].length == 1) {
-      time[1] = '0' + time[1];
-    }
-    time = time[0] + time[1] + '00';
-  }else if(time.length == 3) {
-    for(let i=1; i<time.length; i++) {
-      if(time[i].length == 1) {
-        time[i] = '0' + time[i];
+  switch (time.length) {
+    case 0:
+      time = '00';
+      break;
+    case 1:
+      time = time[0];
+      break;
+    case 2:
+      if(time[1].length == 1) {
+        time[1] = '0' + time[1];
       }
-    }
-    time = (time[0]+time[1]+time[2]);
+      time = time[0] + time[1] + '00';
+      break;
+    case 3:
+      for(let i=1; i<time.length; i++) {
+        if(time[i].length == 1) {
+          time[i] = '0' + time[i];
+        }
+      }
+      time = (time[0]+time[1]+time[2]);
+      break;
+    default:
+      break;
   }
   return time*1;
 }

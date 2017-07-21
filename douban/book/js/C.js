@@ -11,18 +11,22 @@ let num = 0,//start从第num个数据开始显示
 //初始化，显示javascript搜索结果书籍
 Modle('javascript',num,n);
 //初始化，抓取所有数据存到本地待调用
-ModleAll('javascript',num,n);
+//ModleAll('javascript',num,n);
 
 //点击搜索，按照输入内容请求数据并展示
 $btn.click(function() {
+  console.log(1)
   num = n = 0;
   val = $txt.val();
-  location.search = 'text=' + val;
   localtion.hash = 'page=' + (n+1);
+  location.search = 'text=' + val;
+  console.log(location.search,location.hash)
+  console.log(1)
   Modle(val,num,n);//搜索后首次数据展示
   ModleAll(val,num,n);//拉取搜索匹配条目到本地
   $('.bookSort a').eq(0).addClass('deSort').parent().siblings().children().removeClass('deSort');
   return false;
+  localtion.hash = 'text=' + val + '&page=' + (n+1);
 })
 
 //搜索结果页码，上一页和下一页
@@ -35,7 +39,7 @@ $pageA.on('click','a',function(ev) {
   num = (ev.target.innerHTML-1)*49;
   n = ev.target.innerHTML-1;
   val = val || 'javascript';
-  localtion.hash = 'page=' + (n+1);
+  localtion.hash = 'text=' + val + '&page=' + (n+1);
   changePage();
 })
 
@@ -44,7 +48,7 @@ $prev.click(function(ev) {
   if(n>0) {
     num -= 49;
     n--;
-    localtion.hash = 'page=' + (n+1);
+  localtion.hash = 'text=' + val + '&page=' + (n+1);
     changePage();
   }
 })
@@ -53,7 +57,7 @@ $prev.click(function(ev) {
 $next.on('click','a',function(ev) {
   num += 49;
   n++;
-  localtion.hash = 'page=' + (n+1);
+  localtion.hash = 'text=' + val + '&page=' + (n+1);
   val = val || 'javascript';
   changePage();
   return false;

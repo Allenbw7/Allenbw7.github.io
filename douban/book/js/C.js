@@ -17,6 +17,8 @@ ModleAll('javascript',num,n);
 $btn.click(function() {
   num = n = 0;
   val = $txt.val();
+  location.search = 'text=' + val;
+  localtion.hash = 'page=' + (n+1);
   Modle(val,num,n);//搜索后首次数据展示
   ModleAll(val,num,n);//拉取搜索匹配条目到本地
   $('.bookSort a').eq(0).addClass('deSort').parent().siblings().children().removeClass('deSort');
@@ -33,6 +35,7 @@ $pageA.on('click','a',function(ev) {
   num = (ev.target.innerHTML-1)*49;
   n = ev.target.innerHTML-1;
   val = val || 'javascript';
+  localtion.hash = 'page=' + (n+1);
   changePage();
 })
 
@@ -41,6 +44,7 @@ $prev.click(function(ev) {
   if(n>0) {
     num -= 49;
     n--;
+    localtion.hash = 'page=' + (n+1);
     changePage();
   }
 })
@@ -49,6 +53,7 @@ $prev.click(function(ev) {
 $next.on('click','a',function(ev) {
   num += 49;
   n++;
+  localtion.hash = 'page=' + (n+1);
   val = val || 'javascript';
   changePage();
   return false;

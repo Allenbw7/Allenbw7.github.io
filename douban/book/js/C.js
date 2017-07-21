@@ -15,18 +15,14 @@ Modle('javascript',num,n);
 
 //点击搜索，按照输入内容请求数据并展示
 $btn.click(function() {
-  console.log(1)
   num = n = 0;
   val = $txt.val();
-  localtion.hash = 'page=' + (n+1);
-  location.search = 'text=' + val;
-  console.log(location.search,location.hash)
-  console.log(1)
+  localtion.hash = 'text=' + val + '&page=' + (n+1);
   Modle(val,num,n);//搜索后首次数据展示
   ModleAll(val,num,n);//拉取搜索匹配条目到本地
   $('.bookSort a').eq(0).addClass('deSort').parent().siblings().children().removeClass('deSort');
-  return false;
   localtion.hash = 'text=' + val + '&page=' + (n+1);
+  return false;
 })
 
 //搜索结果页码，上一页和下一页

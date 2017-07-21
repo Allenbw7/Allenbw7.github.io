@@ -1,6 +1,6 @@
-let bookAll = {books:[]},//默认排序
-    bookAll1 = {books:[]},//时间排序
-    bookAll2 = {books:[]};//评分排序
+let bookAll = {books:[]},//默认排序缓存数据
+    bookAll1 = {books:[]},//时间排序缓存数据
+    bookAll2 = {books:[]};//评分排序缓存数据
 
 //向豆瓣接口请求搜索内容的具体数据
 function ModleAll(val,num,n){
@@ -32,7 +32,7 @@ function ModleAll(val,num,n){
         bookAll2.books.sort(function(a,b) {
           return b.rating.average - a.rating.average;
         });
-        //console.log(bookAll,bookAll1,bookAll2);
+        console.log(bookAll,bookAll1,bookAll2);
       }
     }
   });

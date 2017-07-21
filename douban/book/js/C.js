@@ -11,17 +11,16 @@ let num = 0,//start从第num个数据开始显示
 //初始化，显示javascript搜索结果书籍
 Modle('javascript',num,n);
 //初始化，抓取所有数据存到本地待调用
-//ModleAll('javascript',num,n);
+ModleAll('javascript',num,n);
 
 //点击搜索，按照输入内容请求数据并展示
 $btn.click(function() {
   num = n = 0;
   val = $txt.val();
-  localtion.hash = 'text=' + val + '&page=' + (n+1);
+  location.hash = 'text=' + val + '&start=' + (num);
   Modle(val,num,n);//搜索后首次数据展示
   ModleAll(val,num,n);//拉取搜索匹配条目到本地
   $('.bookSort a').eq(0).addClass('deSort').parent().siblings().children().removeClass('deSort');
-  localtion.hash = 'text=' + val + '&page=' + (n+1);
   return false;
 })
 
@@ -35,7 +34,7 @@ $pageA.on('click','a',function(ev) {
   num = (ev.target.innerHTML-1)*49;
   n = ev.target.innerHTML-1;
   val = val || 'javascript';
-  localtion.hash = 'text=' + val + '&page=' + (n+1);
+  location.hash = 'text=' + val + '&start=' + (num);
   changePage();
 })
 
@@ -44,7 +43,7 @@ $prev.click(function(ev) {
   if(n>0) {
     num -= 49;
     n--;
-  localtion.hash = 'text=' + val + '&page=' + (n+1);
+    location.hash = 'text=' + val + '&start=' + (num);
     changePage();
   }
 })
@@ -53,7 +52,7 @@ $prev.click(function(ev) {
 $next.on('click','a',function(ev) {
   num += 49;
   n++;
-  localtion.hash = 'text=' + val + '&page=' + (n+1);
+  location.hash = 'text=' + val + '&start=' + (num);
   val = val || 'javascript';
   changePage();
   return false;
@@ -105,3 +104,23 @@ function bookS(i) {
       break;
   }
 }
+
+//当hash改变时触发
+// window.onhashchange = function() {
+//   console.log('hashchange');
+//   let bk = {};
+//   let bookHash = (location.hash).split('&');
+//   for(let i=0; i<bookHash.length; i++) {
+//     bookHash[i] = bookHash[i].split('=');
+//     if(bookHash[i][0] == 'text') {
+//       bk[bookHash[i][0]] = bookHash[i][1];
+//     }else if(bookHash[i][0] == 'start') {
+//       bk[bookHash[i][0]] = bookHash[i][1];
+//     }
+//   }
+//   val = bk.text;
+//   num = bk.start;
+//   n = num/49;
+//   console.log(num,n)
+//   changePage();
+// }
